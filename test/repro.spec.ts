@@ -7,9 +7,9 @@ describe('Repro', () => {
 		await context.expect(res).toMatchFileSnapshot('./not_empty.md')
 	})
 
-	it('should pass with empty snapshot', async () => {
+	it('should pass with empty snapshot', async (context) => {
 		const res = ''
-		await expect(res).toMatchFileSnapshot('./empty.md')
+		await context.expect(res).toMatchFileSnapshot('./empty.md')
 	})
 
 })
