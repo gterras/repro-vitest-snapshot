@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:ci": "CI=true vitest run"
   },
   "author": "",
   "license": "ISC",
