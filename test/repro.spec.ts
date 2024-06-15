@@ -1,15 +1,15 @@
-import { describe, it } from "vitest";
+import { describe, it, expect } from "vitest";
 
 describe('Repro', () => {
 
-	it('should pass with non-empty snapshot', (context) => {
+	it('should pass with non-empty snapshot', async (context) => {
 		const res = 'foo'
-		context.expect(res).toMatchFileSnapshot('./not_empty.md')
+		await context.expect(res).toMatchFileSnapshot('./not_empty.md')
 	})
 
-	it('should pass with empty snapshot', (context) => {
+	it('should pass with empty snapshot', async () => {
 		const res = ''
-		context.expect(res).toMatchFileSnapshot('./empty.md')
+		await expect(res).toMatchFileSnapshot('./empty.md')
 	})
 
 })
